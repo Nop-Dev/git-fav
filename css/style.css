@@ -2,12 +2,18 @@
 
 /* Root config */
 :root {
+    margin: 0;
+    padding: 0;
+
     font-size: 62.5%;
 
+    --line-color: #4A808C;
+    --line-color-nopac: #4a808c80;
     --lighter-green: #092D38;
     --dark-green: #06181C;
-    --darker-green: #06161B;
+    --darker-green-nopac: #06161b80;
     --cyan: #065E7C;
+    --red: #ff0000; 
 }
 
 body {
@@ -29,15 +35,12 @@ body {
     width: 65vw;
 }
 
-
 /* Header config */
 header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 1.8rem;
-
-    
+    margin-bottom: 1.8rem; 
 }
 
 header img#logo {
@@ -81,6 +84,83 @@ header button#searchbtn {
     clip: rect(0, 0, 0, 0);
     white-space: nowrap;
     border-width: 0;
+}
+
+/* Table config */
+table {
+    margin-inline: .8rem;
+    width: 100%;
+    border: var(--line-color) 1px solid;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table thead {
+    background-color: var(--lighter-green);
+}
+
+table thead th {
+    padding: 1.2rem 1.2rem 1.2rem 1.6rem;
+}
+
+table tbody tr {
+    border-top: var(--line-color) 1px solid;
+}
+
+table tbody tr:nth-child(even) {
+    background: var(--dark-green);
+}
+
+table tbody tr:nth-child(odd) {
+    background: var(--darker-green-nopac);
+}
+
+table td {
+    padding: 1.4rem;
+}
+
+table p {
+    margin: 0;
+    font-weight: bold;
+}
+
+table a {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    text-decoration: none;
+    color: #ffffff;
+}
+
+td.user {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+td.user img {
+    object-fit: cover;
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+td.repositories,
+td.followers {
+    width: 25%;
+}
+
+td.remove {
+    width: 15%;
+}
+
+button.remove {
+    font-family: 'Roboto', sans-serif;
+    border: none;
+    background: none;
+    color: #ff0000;
+    font-size: 14px;
+    font-weight: 500;
 }
 
 @media (max-width: 830px) {
