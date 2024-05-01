@@ -53,6 +53,7 @@ div#search {
 
 header input#searchbar {
     background-color: var(--lighter-green);
+    color: #ffffff;
     width: 25vw;
     padding: 1.2rem;
     border-radius: 5px;
